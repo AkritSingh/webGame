@@ -9,8 +9,10 @@
     "env": {
       "NODE_ENV": "production"
     },
-    "routes": {
+    "routes":[
+      {
         "src": "/(.*)",
         "dest": "/"
-    }
+      }
+    ]
   }
