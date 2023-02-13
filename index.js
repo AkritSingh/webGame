@@ -15,11 +15,11 @@ console.log(publicPath)
 
 // middlewires
 // middlewires
-// app.use(express.static(publicPath));
+app.use(express.static(publicPath));
 // res.sendFile(path.join(publicPath, 'index.html'));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(publicPath, 'index.html'));
+// });
 app.use(cors({ origin: true, credentials: true }));
 
 // socket handling
