@@ -8,7 +8,7 @@ const socketIO = require('socket.io');
 const io = socketIO(server);
 let rooms = {};
 
-const publicPath = path.join(__dirname, 'public');
+const publicPath = path.join(__dirname, 'Public');
 const port = process.env.PORT || 3003;
 console.log(publicPath)
 
