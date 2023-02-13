@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
+// const cors = require('cors');
 const http = require('http');
 let server = http.createServer(app)
 const socketIO = require('socket.io');
@@ -20,7 +20,7 @@ app.use(express.static(publicPath));
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(publicPath, 'index.html'));
 // });
-app.use(cors({ origin: true, credentials: true }));
+// app.use(cors({ origin: true, credentials: true }));
 
 // socket handling
 io.on('connection', (socket) => {
