@@ -1,4 +1,4 @@
-const socket = io(process.env.PORT || 'http://localhost:3003');
+const socket = io('https://web-game-6widh96m6-akritsingha-timesinterne.vercel.app');
 
 document.getElementById('btnClick').addEventListener('click', function(){
     console.log('start')
