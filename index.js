@@ -9,7 +9,7 @@ const io = socketIO(server);
 let rooms = {};
 
 const publicPath = path.join(__dirname, 'Public');
-const port = process.env.PORT || 3003;
+const port = 'https://web-game-6widh96m6-akritsingha-timesinterne.vercel.app';
 console.log(publicPath)
 
 
