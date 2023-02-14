@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3003');
+const socket = io(process.env.PORT || 'http://localhost:3003');
 
 document.getElementById('btnClick').addEventListener('click', function(){
     console.log('start')
