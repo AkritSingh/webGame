@@ -9,29 +9,29 @@ const io = socketIO(server);
 let rooms = {};
 
 const publicPath = path.join(__dirname, 'Public');
-const port = 'https://web-game-6widh96m6-akritsingha-timesinterne.vercel.app';
+const port = process.env.PORT || 3003;
 console.log(publicPath)
 
 
 // middlewires
 // middlewires
 app.use(express.static(publicPath));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, DELETE, HEAD, OPTIONS");
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET, PUT, DELETE, HEAD, OPTIONS");
   
-  next();
-});
+//   next();
+// });
 // res.sendFile(path.join(publicPath, 'index.html'));
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(publicPath, 'index.html'));
 // });
 // app.use(cors({ origin: true, credentials: true }));
-// app.use(cors({
-//   origin: 'http://localhost:3003',
-//   credentials: true
-// }));
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
 
 // socket handling
 io.on('connection', (socket) => {
