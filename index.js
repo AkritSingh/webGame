@@ -16,22 +16,22 @@ console.log(publicPath)
 // middlewires
 // middlewires
 app.use(express.static(publicPath));
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   res.header("Access-Control-Allow-Methods", "GET, PUT, DELETE, HEAD, OPTIONS");
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, DELETE, HEAD, OPTIONS");
   
-//   next();
-// });
+  next();
+});
 // res.sendFile(path.join(publicPath, 'index.html'));
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(publicPath, 'index.html'));
 // });
 // app.use(cors({ origin: true, credentials: true }));
-app.use(cors({
-  origin: '*',
-  credentials: true
-}));
+// app.use(cors({
+//   origin: '*',
+//   credentials: true
+// }));
 
 // socket handling
 io.on('connection', (socket) => {
